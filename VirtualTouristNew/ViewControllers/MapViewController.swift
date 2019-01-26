@@ -148,7 +148,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cont = segue.destination as! PhotoViewController
+        let cont = segue.destination as! PhotoAlbumViewController
         
         cont.managedContext = managedContext
         cont.focusedRegion = regions
@@ -167,7 +167,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
  
         regions = MKCoordinateRegion(center: center, span: span)
         
-        performSegue(withIdentifier: "PhotoViewController", sender: self)
+        performSegue(withIdentifier: "PhotoAlbumViewController", sender: self)
     }
     
     

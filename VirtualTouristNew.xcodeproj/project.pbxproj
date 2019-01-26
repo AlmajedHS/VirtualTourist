@@ -17,7 +17,7 @@
 		231F6AA021FC18A0004E8C83 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6A9F21FC18A0004E8C83 /* Pin.swift */; };
 		231F6AA221FC18AB004E8C83 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA121FC18AB004E8C83 /* Photo.swift */; };
 		231F6AA421FC18BE004E8C83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA321FC18BE004E8C83 /* MapViewController.swift */; };
-		231F6AA621FC18CC004E8C83 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA521FC18CC004E8C83 /* PhotoViewController.swift */; };
+		231F6AA621FC18CC004E8C83 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA521FC18CC004E8C83 /* PhotoAlbumViewController.swift */; };
 		231F6AA821FC18D7004E8C83 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA721FC18D7004E8C83 /* Client.swift */; };
 		231F6AAA21FC18E4004E8C83 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AA921FC18E4004E8C83 /* APIConstants.swift */; };
 		231F6AAC21FC18FB004E8C83 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F6AAB21FC18FB004E8C83 /* CoreDataStack.swift */; };
@@ -37,7 +37,7 @@
 		231F6A9F21FC18A0004E8C83 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		231F6AA121FC18AB004E8C83 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		231F6AA321FC18BE004E8C83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		231F6AA521FC18CC004E8C83 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		231F6AA521FC18CC004E8C83 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		231F6AA721FC18D7004E8C83 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		231F6AA921FC18E4004E8C83 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		231F6AAB21FC18FB004E8C83 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				231F6AA321FC18BE004E8C83 /* MapViewController.swift */,
-				231F6AA521FC18CC004E8C83 /* PhotoViewController.swift */,
+				231F6AA521FC18CC004E8C83 /* PhotoAlbumViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 				231F6A9C21FC1887004E8C83 /* Pin+CoreDataProperties.swift in Sources */,
 				231F6A8C21FC1846004E8C83 /* VirtualTouristNew.xcdatamodeld in Sources */,
 				231F6AA021FC18A0004E8C83 /* Pin.swift in Sources */,
-				231F6AA621FC18CC004E8C83 /* PhotoViewController.swift in Sources */,
+				231F6AA621FC18CC004E8C83 /* PhotoAlbumViewController.swift in Sources */,
 				231F6A9E21FC1893004E8C83 /* Photo+CoreDataProperties.swift in Sources */,
 				231F6A8421FC1846004E8C83 /* AppDelegate.swift in Sources */,
 				231F6AA821FC18D7004E8C83 /* Client.swift in Sources */,

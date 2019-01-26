@@ -38,17 +38,17 @@
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="2Fa-lj-NuT"/>
                     <connections>
                         <outlet property="mapView" destination="vy7-fe-16E" id="mIW-nc-bjH"/>
-                        <segue destination="8cC-kb-c2v" kind="show" identifier="PhotoViewController" id="PKJ-D2-ThX"/>
+                        <segue destination="8cC-kb-c2v" kind="show" identifier="PhotoAlbumViewController" id="PKJ-D2-ThX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr4-FJ-JTV" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="793"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Photo Album View Controller-->
         <scene sceneID="bVI-1I-VW9">
             <objects>
-                <viewController storyboardIdentifier="PhotosViewController" id="8cC-kb-c2v" customClass="PhotoViewController" customModule="VirtualTouristNew" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotosViewController" id="8cC-kb-c2v" customClass="PhotoAlbumViewController" customModule="VirtualTouristNew" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fvE-Ls-ChZ"/>
                         <viewControllerLayoutGuide type="bottom" id="tFi-ju-VLa"/>
