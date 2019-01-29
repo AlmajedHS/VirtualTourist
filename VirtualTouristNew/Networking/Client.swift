@@ -39,19 +39,22 @@ class Client: NSObject {
             
             guard error == nil else {
                 
-                errorString = "Flickr API returned an error: \(error)"
+                errorString = "Flickr API returned an error: \(error?.localizedDescription ?? "")"
+                completion(nil,errorString)
                 print("error")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode < 300 else {
-                errorString = "Flickr API returned status code > 300 : \(error)"
+                errorString = "Flickr API returned status code > 300 \(error?.localizedDescription ?? "")"
+                completion(nil,errorString)
                 print("error")
                 return
             }
             
             guard let data = data else {
-                 errorString = "no data returned : \(error)"
+                errorString = "no data returned : \(error?.localizedDescription ?? "")"
+                completion(nil,errorString)
                 print("error")
                 return
             }
@@ -59,11 +62,15 @@ class Client: NSObject {
             let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:AnyObject]
             
             guard let element = result??[APIConstants.Photos] as? [String:AnyObject] else {
+                errorString = "error in finding results, try again"
+                completion(nil,errorString)
                 print("error")
                 return
             }
             
             guard let photoArray = element[APIConstants.Photo] as? [[String:AnyObject]] else {
+                errorString = "error in finding photos, try again"
+                completion(nil,errorString)
                 print("error")
                 return
             }
