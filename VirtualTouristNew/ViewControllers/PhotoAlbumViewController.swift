@@ -117,9 +117,13 @@ class PhotoAlbumViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     func getPhotos(pin: Pin) {
         
-        Client.sendRequest(pin) { (photosDictionary, success, error) in
+        Client.sendRequest(pin) { (photosDictionary, error) in
             
             DispatchQueue.main.async {
+                guard error == nil else {
+                    self.showAlert(viewController: self, title: "ERROR", message: error!, actionTitle: "ERROR")
+                    return
+                }
                 self.managedContext.performAndWait() {
                     if let photosDictionary = photosDictionary {
                         if photosDictionary.count == 0 {
@@ -287,6 +291,12 @@ class PhotoAlbumViewController: UIViewController,UICollectionViewDelegate,UIColl
             }
         }
         cell.imageView.image = image
+    }
+    func showAlert(viewController: UIViewController, title: String, message: String?, actionTitle: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
+        
+        viewController.present(alert, animated: true, completion: nil)
     }
     
 }

@@ -13,7 +13,7 @@ import MapKit
 class Client: NSObject {
     
     
-    static func sendRequest(_ pin: Pin, completionHandlerForNetworkRequest: @escaping (_ photosDict: [[String:AnyObject]]?, _ success: Bool, _ error: NSError?) -> Void) {
+    static func sendRequest(_ pin: Pin, completion: @escaping (_ photosDict: [[String:AnyObject]]?, String?)->Void) {
         
         let session = URLSession.shared
         let parametersFlicker = [
@@ -29,7 +29,7 @@ class Client: NSObject {
             "page": "\(arc4random_uniform(10))"
         ]
         
-        
+        var errorString: String?
         guard var url = URL(string: APIConstants.BaseURL) else { return }
         url = url.URLByAppendingQueryParameters(parametersFlicker)
         let request = NSMutableURLRequest(url: url)
@@ -38,16 +38,20 @@ class Client: NSObject {
         let task: URLSessionDataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
             
             guard error == nil else {
+                
+                errorString = "Flickr API returned an error: \(error)"
                 print("error")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode < 300 else {
+                errorString = "Flickr API returned status code > 300 : \(error)"
                 print("error")
                 return
             }
             
             guard let data = data else {
+                 errorString = "no data returned : \(error)"
                 print("error")
                 return
             }
@@ -64,7 +68,10 @@ class Client: NSObject {
                 return
             }
             
-            completionHandlerForNetworkRequest(photoArray, true, nil)
+            DispatchQueue.main.async {
+                completion(photoArray,errorString)
+                
+            }
             
             
         })
